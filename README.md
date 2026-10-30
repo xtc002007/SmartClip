@@ -1,70 +1,99 @@
 # SmartClip
 
-> 从文案提取到数字人视频合成的一站式智能短视频工作流工作台。
+> **AI-Powered Short Video Generation, Voice Cloning & Lip-Sync Desktop Studio.**
 
-[![Release](https://img.shields.io/github/v/release/xtc002007/SmartClip?style=flat-square)](https://github.com/xtc002007/SmartClip/releases)
-[![Platform](https://img.shields.io/badge/platform-Windows%20(x64)-blue.svg?style=flat-square)](https://nexustools.tech)
+[![GitHub Release](https://img.shields.io/github/v/release/xtc002007/SmartClip?style=flat-square&color=pink)](https://github.com/xtc002007/SmartClip/releases)
+[![Platform](https://img.shields.io/badge/platform-Windows%20x64-blue.svg?style=flat-square)](https://nexustools.tech)
+[![Engine](https://img.shields.io/badge/backend-Tauri%20v2%20%7C%20FFmpeg-red.svg?style=flat-square)](https://ffmpeg.org)
+[![UI](https://img.shields.io/badge/frontend-React%2019%20%7C%20Tailwind-61dafb.svg?style=flat-square)](https://react.dev)
 [![License](https://img.shields.io/badge/license-Proprietary-lightgrey.svg?style=flat-square)](./LICENSE)
 
 ---
 
-## 📖 简介 / Overview
+## 📌 Overview
 
-**SmartClip 智能剪辑** 是 [NexusTools](https://nexustools.tech) 团队打造的专业桌面工具。  
-集成文案提取、AI 语音合成、智能唇形同步与视频样式渲染的全流程桌面级短视频创作利器。
+**SmartClip** is an intelligent, desktop-first AI content creation studio engineered for content creators, marketers, educators, and social media agencies. Built on a robust **Tauri v2 + React 19 + Local Media Pipeline (FFmpeg & Node.js)** architecture, SmartClip automates the end-to-end short video production workflow—from viral copy extraction and voice cloning to neural lip-synchronization and kinetic subtitle styling.
 
-本仓库为 **官方公开发布与分发门面仓库**，专门用于对外发布稳定安装包、版本更新日志（Release Notes）以及 Windows Package Manager (winget) 的自动化分发通道。
-
----
-
-## ✨ 核心亮点 / Features
-
-- **短视频平台一键无水印下载与语音/字幕自动提取**
-- **多语种高保真神经语音合成 (TTS) 与音色克隆**
-- **AI 智能唇形同步渲染与面部对齐**
-- **可视化样式编辑器，字幕烧录与高清无损一键导出**
+This repository serves as the **official public distribution and release portal** for SmartClip binaries, release notes, and package manager manifests (including [winget](https://github.com/microsoft/winget-pkgs)).
 
 ---
 
-## 🚀 安装与下载 / Installation
+## ⚡ Key Highlights & Core Capabilities
 
-### 方式 1: 通过 Windows Package Manager (winget) 推荐
+### 1. Intelligent Copy Extraction & Script Optimization
+- **Multimodal Video-to-Text Transcription**: Extract high-accuracy transcripts from existing short video links or local video files in seconds.
+- **AI Hook & Script Enhancer**: Automatically rewrite, condense, and optimize extracted copy for maximum retention across TikTok, YouTube Shorts, and Instagram Reels.
 
-只需在 Windows Terminal / PowerShell 中输入：
+### 2. High-Fidelity AI Speech Synthesis & Voice Cloning
+- **Expressive Multi-Voice TTS**: Integrated with industry-leading neural speech engines (DashScope CosyVoice, ElevenLabs, and local models) offering natural intonation, breathing pauses, and emotional nuances.
+- **Zero-Shot Voice Cloning**: Clone distinct character and brand voices using short reference audio samples.
+
+### 3. Neural Lip-Sync & Digital Human Re-talking
+- **Pixel-Accurate Lip Synchronization**: Advanced neural facial synthesis matches character mouth movements to newly generated voice tracks with frame-by-frame precision.
+- **Natural Facial Dynamics**: Preserves natural head movement, blink timing, and facial geometry without eerie artifacts or jitter.
+
+### 4. Kinetic Subtitle Studio & Motion Styling
+- **Dynamic ASS Subtitle Engine**: Generates word-by-word animated highlights, karaoke-style active coloring, outlines, glows, and shadow drops.
+- **Visual Style Editor**: Real-time preview of subtitle positioning, typography sizing, line breaks, and entrance/exit animations.
+
+### 5. High-Performance Local Media Engine
+- **Bundled FFmpeg & Hardware Acceleration**: Runs local audio/video extraction, concatenation, and encoding directly on your GPU (NVIDIA NVENC, Intel QSV, AMD AMF) for maximum throughput.
+- **Privacy-Preserving Architecture**: Large source video files remain on your local disk—only lightweight API requests are transmitted to cloud synthesis models.
+
+---
+
+## 🚀 Installation & Downloads
+
+### Method 1: Windows Package Manager (winget) — Recommended
+
+Install SmartClip in one command via Windows Terminal or PowerShell:
 
 ```powershell
 winget install NexusTools.SmartClip
 ```
 
-升级现有版本：
+Upgrade to the latest version:
 
 ```powershell
 winget upgrade NexusTools.SmartClip
 ```
 
-### 方式 2: GitHub Releases 直接下载
+---
 
-访问 [Releases 页面](https://github.com/xtc002007/SmartClip/releases/latest)，下载最新版本的 Windows 安装包：
-- `SmartClip_<version>_windows_x64_setup.exe`（推荐，支持应用内平滑自动升级）
-- `SmartClip_<version>_windows_x64_portable.zip`（免安装绿色便携版）
+### Method 2: Direct Download from GitHub Releases
 
-### 方式 3: NexusTools 官方网站
+Visit the [GitHub Releases](https://github.com/xtc002007/SmartClip/releases/latest) page to grab official packages:
 
-前往 [NexusTools 官网](https://nexustools.tech) 了解详情并一键下载。
+| Asset | Description | Recommended For |
+| :--- | :--- | :--- |
+| `SmartClip_<version>_windows_x64_setup.exe` | Windows NSIS Setup Installer | Standard installation with desktop integration |
+| `SmartClip_<version>_windows_x64_portable.zip` | Standalone Portable Archive | Zero-installation portable workflows |
 
 ---
 
-## 🔄 自动更新与安全保障
+### Method 3: Official NexusTools Portal
 
-- **应用内自动更新**：软件内置静默更新检测与差分安全下载机制，由 NexusTools 官方分发端点提供稳定支持。
-- **数字验签与防篡改**：所有官方发布资产均附带 minisign ed25519 防篡改数字签名与 Windows Authenticode 代码签名。
+Explore SmartClip and our full creator suite at [https://nexustools.tech](https://nexustools.tech).
 
 ---
 
-## 📄 软件使用许可 / License
+## 🔒 Security, Authenticity & Verification
 
-本项目采用 [NexusTools 软件专有许可协议 (EULA)](./LICENSE)。  
-免费基础功能可永久免费使用；高级专业特性受 NexusTools 统一账号与订阅协议约束。
+- **Code Signing**: All release packages are signed with Windows Authenticode digital certificates.
+- **Cryptographic Verification**: Minisign Ed25519 signature files are supplied alongside setup executables.
+- **Silent Background Updates**: Integrated auto-updater securely checks official NexusTools endpoints over TLS 1.3.
 
-- **问题反馈与建议**：欢迎在 [GitHub Issues](https://github.com/xtc002007/SmartClip/issues) 提交反馈。
-- **官方技术支持**：https://nexustools.tech
+---
+
+## ⚖️ License & EULA
+
+SmartClip is distributed under the [NexusTools End-User License Agreement (EULA)](./LICENSE).  
+- Local media processing, subtitle editing, and copy management are permanently accessible.  
+- Cloud AI synthesis models (voice cloning, neural lip-sync) are powered by the unified NexusTools platform quota.
+
+---
+
+## 💬 Community & Support
+
+- **Bug Reports & Feedback**: [GitHub Issues](https://github.com/xtc002007/SmartClip/issues)
+- **Official Portal**: [https://nexustools.tech](https://nexustools.tech)
